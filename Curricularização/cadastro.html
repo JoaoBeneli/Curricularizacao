@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .cadastro-container {
+            margin-top: 50px;
+        }
+        /* Estilo do botão de cadastro */
+        .btn-cadastrar {
+            background-color: #342484; /* Cor personalizada */
+            color: white; /* Cor do texto */
+            border: none; /* Remove bordas padrão */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="./Imagem/marca_casa_crianca_dom_antonio_horizontal.png" alt="Logo da Escola" style="height: 40px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <!-- Menu suspenso para Cadastro de Alunos -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="cadastroDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Cadastro
+                </a>
+                <div class="dropdown-menu" aria-labelledby="cadastroDropdown">
+                    <a class="dropdown-item" href="cadastro.html">Cadastro de Aluno</a>
+                    <a class="dropdown-item" href="cadastro_professores.html">Cadastro de Professor</a>
+                    <a class="dropdown-item" href="cadastro_atividade.html">Cadastro de Atividade</a>
+                </div>
+            </li>
+            <!-- Menu suspenso para Relatórios -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="relatoriosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Relatórios
+                </a>
+                <div class="dropdown-menu" aria-labelledby="relatoriosDropdown">
+                    <a class="dropdown-item" href="relatorio_aluno.html">Relatório de Alunos</a>
+                    <a class="dropdown-item" href="relatorios_assistente_social.html">Relatório de Desempenho</a>
+                    <a class="dropdown-item" href="relatorios.html">Retirada de Relatórios</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container cadastro-container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Cadastro de Alunos</h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input type="password" class="form-control" id="senha" placeholder="Crie uma senha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dataNascimento">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="dataNascimento" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" class="form-control" id="telefone" placeholder="Digite seu telefone" required>
+                        </div>
+                        <button type="submit" class="btn btn-cadastrar btn-block">Cadastrar</button>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <small>Já tem uma conta? <a href="login.html">Faça login aqui</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

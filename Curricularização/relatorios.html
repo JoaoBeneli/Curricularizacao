@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirada de Relatórios</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .relatorios-container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="./Imagem/marca_casa_crianca_dom_antonio_horizontal.png" alt="Logo da Escola" style="height: 40px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <!-- Menu suspenso para Cadastro de Alunos -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="cadastroDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Cadastro
+                </a>
+                <div class="dropdown-menu" aria-labelledby="cadastroDropdown">
+                    <a class="dropdown-item" href="cadastro.html">Cadastro de Aluno</a>
+                    <a class="dropdown-item" href="cadastro_professores.html">Cadastro de Professor</a>
+                    <a class="dropdown-item" href="cadastro_atividade.html">Cadastro de Atividade</a>
+                </div>
+            </li>
+            <!-- Menu suspenso para Relatórios -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="relatoriosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Relatórios
+                </a>
+                <div class="dropdown-menu" aria-labelledby="relatoriosDropdown">
+                    <a class="dropdown-item" href="relatorio_aluno.html">Relatório de Alunos</a>
+                    <a class="dropdown-item" href="relatorios_assistente_social.html">Relatório de Desempenho</a>
+                    <a class="dropdown-item" href="relatorios.html">Retirada de Relatórios</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<div class="container relatorios-container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Retirada de Relatórios</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nome do Relatório</th>
+                                <th>Data de Geração</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Relatório de Desempenho 2024</td>
+                                <td>18/10/2024</td>
+                                <td>
+                                    <a href="#" class="btn btn-primary btn-sm">Visualizar</a>
+                                    <a href="#" class="btn btn-success btn-sm">Baixar</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Relatório de Frequência - 2024</td>
+                                <td>15/10/2024</td>
+                                <td>
+                                    <a href="#" class="btn btn-primary btn-sm">Visualizar</a>
+                                    <a href="#" class="btn btn-success btn-sm">Baixar</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Relatório Financeiro - Q3 2024</td>
+                                <td>10/10/2024</td>
+                                <td>
+                                    <a href="#" class="btn btn-primary btn-sm">Visualizar</a>
+                                    <a href="#" class="btn btn-success btn-sm">Baixar</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-center">
+                    <small>Para mais informações, entre em contato com o suporte.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

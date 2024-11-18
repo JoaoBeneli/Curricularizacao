@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retirada de Relatórios</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #f8f9fa;
@@ -58,8 +59,7 @@
     </div>
 </nav>
 
-
-
+<!-- Retirada de Relatórios -->
 <div class="container relatorios-container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -68,41 +68,20 @@
                     <h4>Retirada de Relatórios</h4>
                 </div>
                 <div class="card-body">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Nome do Relatório</th>
-                                <th>Data de Geração</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Relatório de Desempenho 2024</td>
-                                <td>18/10/2024</td>
-                                <td>
-                                    <a href="#" class="btn btn-primary btn-sm">Visualizar</a>
-                                    <a href="#" class="btn btn-success btn-sm">Baixar</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Relatório de Frequência - 2024</td>
-                                <td>15/10/2024</td>
-                                <td>
-                                    <a href="#" class="btn btn-primary btn-sm">Visualizar</a>
-                                    <a href="#" class="btn btn-success btn-sm">Baixar</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Relatório Financeiro - Q3 2024</td>
-                                <td>10/10/2024</td>
-                                <td>
-                                    <a href="#" class="btn btn-primary btn-sm">Visualizar</a>
-                                    <a href="#" class="btn btn-success btn-sm">Baixar</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nome do Relatório</th>
+                                    <th>Data de Geração</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Conteúdo dinâmico será adicionado aqui -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="card-footer text-center">
                     <small>Para mais informações, entre em contato com o suporte.</small>
@@ -112,8 +91,64 @@
     </div>
 </div>
 
+<!-- Modal para Visualização -->
+<div class="modal fade" id="visualizarModal" tabindex="-1" role="dialog" aria-labelledby="visualizarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="visualizarModalLabel">Visualizar Relatório</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Aqui será exibido o conteúdo do relatório selecionado.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Dados dos relatórios
+    const relatorios = [
+        { nome: "Relatório de Desempenho 2024", data: "18/10/2024", caminho: "desempenho_2024.pdf" },
+        { nome: "Relatório de Frequência - 2024", data: "15/10/2024", caminho: "frequencia_2024.pdf" },
+        { nome: "Relatório Financeiro - Q3 2024", data: "10/10/2024", caminho: "financeiro_q3_2024.pdf" }
+    ];
+
+    const tabelaBody = document.querySelector("tbody");
+
+    // Preenchendo a tabela
+    relatorios.forEach(relatorio => {
+        const linha = document.createElement("tr");
+        linha.innerHTML = `
+            <td>${relatorio.nome}</td>
+            <td>${relatorio.data}</td>
+            <td>
+                <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#visualizarModal">
+                    <i class="fas fa-eye"></i> Visualizar
+                </a>
+                <a href="${relatorio.caminho}" download class="btn btn-success btn-sm">
+                    <i class="fas fa-download"></i> Baixar
+                </a>
+            </td>
+        `;
+        tabelaBody.appendChild(linha);
+    });
+
+    // Mensagem de feedback
+    document.querySelectorAll(".btn-success").forEach(btn => {
+        btn.addEventListener("click", () => alert("Download iniciado."));
+    });
+</script>
+
 </body>
 </html>
+

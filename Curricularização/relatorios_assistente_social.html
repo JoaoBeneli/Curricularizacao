@@ -109,6 +109,50 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        // Obtém os valores dos campos do formulário
+        const nomeAluno = document.getElementById('nome_aluno').value.trim();
+        const nomeProfessor = document.getElementById('nome_professor').value.trim();
+        const dataRelatorio = document.getElementById('data_relatorio').value.trim();
+        const disciplina = document.getElementById('disciplina').value.trim();
+        const nota = document.getElementById('nota').value.trim();
+        const comentarios = document.getElementById('comentarios').value.trim();
+
+        // Validação para garantir que todos os campos foram preenchidos
+        if (!nomeAluno || !nomeProfessor || !dataRelatorio || !disciplina || !nota || !comentarios) {
+            alert('Por favor, preencha todos os campos antes de salvar o relatório.');
+            return;
+        }
+
+        // Validação da nota (se está entre 0 e 10)
+        if (nota < 0 || nota > 10) {
+            alert('A nota deve estar entre 0 e 10.');
+            return;
+        }
+
+        // Exibe uma mensagem de sucesso
+        alert(`Relatório de desempenho de ${nomeAluno} salvo com sucesso!`);
+
+        // Opcional: Salvar os dados no localStorage ou enviar para um servidor
+        // localStorage.setItem('relatorioDesempenho', JSON.stringify({
+        //     nomeAluno,
+        //     nomeProfessor,
+        //     dataRelatorio,
+        //     disciplina,
+        //     nota,
+        //     comentarios
+        // }));
+
+        // Limpa o formulário
+        document.querySelector('form').reset();
+    });
+</script>
+
+
 </body>
 </html>
 

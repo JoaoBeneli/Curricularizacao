@@ -146,5 +146,57 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Validação e salvamento do formulário
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        // Obtém os valores dos campos do formulário
+        const nomeResponsavel = document.getElementById('nome_responsavel').value.trim();
+        const rendaFamiliar = document.getElementById('renda_familiar').value.trim();
+        const quantidadeFamilia = document.getElementById('quantidade_familia').value.trim();
+        const nFilhos = document.getElementById('n_filhoss').value.trim();
+        const moradia = document.getElementById('moradia').value.trim();
+        const acessoEducacao = document.getElementById('acesso_educacao').value.trim();
+        const acessoSaude = document.getElementById('acesso_saude').value.trim();
+        const condicoesVida = document.getElementById('condicoes_vida').value.trim();
+
+        // Verifica se todos os campos foram preenchidos
+        if (
+            !nomeResponsavel || 
+            !rendaFamiliar || 
+            !quantidadeFamilia || 
+            !nFilhos || 
+            !moradia || 
+            !acessoEducacao || 
+            !acessoSaude || 
+            !condicoesVida
+        ) {
+            alert('Por favor, preencha todos os campos antes de salvar o relatório.');
+            return;
+        }
+
+        // Exibe uma mensagem de sucesso
+        alert(`Relatório socioeconômico de ${nomeResponsavel} salvo com sucesso!`);
+
+        // Opcional: Salvar dados no localStorage ou enviar para um servidor via AJAX/Fetch
+        // localStorage.setItem('relatorio', JSON.stringify({ 
+        //     nomeResponsavel, 
+        //     rendaFamiliar, 
+        //     quantidadeFamilia, 
+        //     nFilhos, 
+        //     moradia, 
+        //     acessoEducacao, 
+        //     acessoSaude, 
+        //     condicoesVida 
+        // }));
+
+        // Limpa o formulário
+        document.querySelector('form').reset();
+    });
+</script>
+
+
 </body>
 </html>

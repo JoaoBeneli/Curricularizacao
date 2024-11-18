@@ -115,6 +115,44 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        // Obtém os valores dos campos do formulário
+        const nomeAluno = document.getElementById('nome_aluno').value.trim();
+        const serieAno = document.getElementById('serie_ano').value.trim();
+        const dataRelatorio = document.getElementById('data_relatorio').value.trim();
+        const statusAcademico = document.getElementById('status_academico').value;
+        const observacoes = document.getElementById('observacoes').value.trim();
+        const relatorioCompleto = document.getElementById('relatorio_completo').value.trim();
+
+        // Validação para garantir que todos os campos foram preenchidos
+        if (!nomeAluno || !serieAno || !dataRelatorio || !statusAcademico || !observacoes || !relatorioCompleto) {
+            alert('Por favor, preencha todos os campos antes de salvar o relatório.');
+            return;
+        }
+
+        // Exibe uma mensagem de sucesso
+        alert(`Relatório do aluno ${nomeAluno} salvo com sucesso!`);
+
+        // Opcional: Salvar dados no localStorage ou enviar para um servidor via AJAX/Fetch
+        // localStorage.setItem('relatorioAluno', JSON.stringify({ 
+        //     nomeAluno, 
+        //     serieAno, 
+        //     dataRelatorio, 
+        //     statusAcademico, 
+        //     observacoes, 
+        //     relatorioCompleto 
+        // }));
+
+        // Limpa o formulário
+        document.querySelector('form').reset();
+    });
+</script>
+
+
 </body>
 </html>
 

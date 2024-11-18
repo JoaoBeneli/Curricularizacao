@@ -107,5 +107,46 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script>
+    // Função para validar o formulário e cadastrar o aluno
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Impede o envio do formulário
+
+        // Obtendo os valores dos campos
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const senha = document.getElementById('senha').value.trim();
+        const dataNascimento = document.getElementById('dataNascimento').value.trim();
+        const telefone = document.getElementById('telefone').value.trim();
+
+        // Verifica se todos os campos foram preenchidos
+        if (!nome || !email || !senha || !dataNascimento || !telefone) {
+            alert('Por favor, preencha todos os campos obrigatórios.');
+            return;
+        }
+
+        // Validação simples para e-mail
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Por favor, insira um e-mail válido.');
+            return;
+        }
+
+        // Validação para senha (mínimo de 6 caracteres)
+        if (senha.length < 6) {
+            alert('A senha deve ter pelo menos 6 caracteres.');
+            return;
+        }
+
+        // Exibe mensagem de sucesso
+        alert(`Aluno ${nome} cadastrado com sucesso!`);
+        
+        // Resetar o formulário após o cadastro
+        document.querySelector('form').reset();
+    });
+</script>
+
 </body>
 </html>

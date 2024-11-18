@@ -107,6 +107,36 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Função para validar e cadastrar a atividade
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        // Obtendo os valores dos campos
+        const titulo = document.getElementById('titulo_atividade').value.trim();
+        const dataEntrega = document.getElementById('data_entrega').value.trim();
+        const descricao = document.getElementById('descricao_atividade').value.trim();
+        const tipo = document.getElementById('tipo_atividade').value;
+
+        // Verifica se todos os campos obrigatórios foram preenchidos
+        if (!titulo || !dataEntrega || !descricao || !tipo) {
+            alert('Por favor, preencha todos os campos obrigatórios.');
+            return;
+        }
+
+        // Mensagem de sucesso
+        alert(`Atividade "${titulo}" cadastrada com sucesso!`);
+
+        // Opcional: Salvar as informações em um banco de dados ou localStorage
+        // localStorage.setItem('atividade', JSON.stringify({ titulo, dataEntrega, descricao, tipo }));
+
+        // Limpa o formulário após o cadastro
+        document.querySelector('form').reset();
+    });
+</script>
+
+
 </body>
 </html>
 

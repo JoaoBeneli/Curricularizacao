@@ -106,5 +106,36 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Função para validar e cadastrar professor
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        // Obtendo os valores dos campos do formulário
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefone = document.getElementById('telefone').value.trim();
+        const disciplina = document.getElementById('disciplina').value.trim();
+        const curriculo = document.getElementById('curriculo').files.length;
+
+        // Validação simples para verificar campos obrigatórios
+        if (!nome || !email || !telefone || !disciplina || curriculo === 0) {
+            alert('Por favor, preencha todos os campos obrigatórios e anexe o currículo.');
+            return;
+        }
+
+        // Mensagem de sucesso
+        alert(`Professor ${nome} cadastrado com sucesso!`);
+
+        // Opcional: Salvar as informações no localStorage ou enviar para um servidor
+        // localStorage.setItem('professor', JSON.stringify({ nome, email, telefone, disciplina }));
+
+        // Limpar o formulário após o cadastro
+        document.querySelector('form').reset();
+    });
+</script>
+
+
 </body>
 </html>

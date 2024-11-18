@@ -3,18 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório de Desempenho</title>
+    <title>Cadastrar Relatório Socioeconômico</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Espaçamento para o conteúdo */
         .container {
             margin-top: 50px;
         }
-        /* Estilo do botão de salvar relatório */
-        .btn-salvar-relatorio {
-            background-color: #342484; /* Cor personalizada */
-            color: white; /* Cor do texto */
-            border: none; /* Remove bordas padrão */
+
+        /* Cor personalizada para os cabeçalhos */
+        .card-header {
+            background-color: #342484;
+            color: white;
+        }
+
+        /* Botões com cor personalizada */
+        .btn-primary {
+            background-color: #342484;
+            border-color: #342484;
+        }
+
+        .btn-primary:hover {
+            background-color: #2a1b6e;
+            border-color: #2a1b6e;
+        }
+
+        /* Títulos centralizados */
+        .titulo-centralizado {
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -61,41 +78,61 @@
         </ul>
     </div>
 </nav>
-<!-- Formulário de Relatório de Desempenho -->
+
+<!-- Formulário de Cadastro de Relatório Socioeconômico -->
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header text-center">
-                    <h4>Relatório de Desempenho</h4>
+                    <h4>Cadastrar Relatório Socioeconômico</h4>
                 </div>
                 <div class="card-body">
                     <form>
                         <div class="form-group">
-                            <label for="nome_aluno">Nome do Aluno</label>
-                            <input type="text" class="form-control" id="nome_aluno" placeholder="Digite o nome do aluno" required>
+                            <label for="nome_responsavel">Nome do Responsável</label>
+                            <input type="text" class="form-control" id="nome_responsavel" placeholder="Digite o nome do responsável" required>
                         </div>
                         <div class="form-group">
-                            <label for="nome_professor">Nome do Professor</label>
-                            <input type="text" class="form-control" id="nome_professor" placeholder="Digite o nome do professor" required>
+                            <label for="renda_familiar">Renda Familiar</label>
+                            <input type="text" class="form-control" id="renda_familiar" placeholder="Digite a renda familiar" required>
+                        </div>
+
+                        <!-- Dados Quantitativos -->
+                        <div class="titulo-centralizado">
+                            <h5>Dados Quantitativos</h5>
                         </div>
                         <div class="form-group">
-                            <label for="data_relatorio">Data do Relatório</label>
-                            <input type="date" class="form-control" id="data_relatorio" required>
+                            <label for="quantidade_familia">Número de Membros na Família</label>
+                            <input type="number" class="form-control" id="quantidade_familia" placeholder="Número de membros" required>
                         </div>
                         <div class="form-group">
-                            <label for="disciplina">Disciplina</label>
-                            <input type="text" class="form-control" id="disciplina" placeholder="Digite a disciplina" required>
+                            <label for="n_filhoss">Número de Filhos em Idade Escolar</label>
+                            <input type="number" class="form-control" id="n_filhoss" placeholder="Número de filhos em idade escolar" required>
+                        </div>
+
+                        <!-- Dados Qualitativos -->
+                        <div class="titulo-centralizado">
+                            <h5>Dados Qualitativos</h5>
                         </div>
                         <div class="form-group">
-                            <label for="nota">Nota</label>
-                            <input type="number" class="form-control" id="nota" placeholder="Digite a nota" min="0" max="10" required>
+                            <label for="moradia">Tipo de Moradia</label>
+                            <input type="text" class="form-control" id="moradia" placeholder="Descreva o tipo de moradia" required>
                         </div>
                         <div class="form-group">
-                            <label for="comentarios">Comentários</label>
-                            <textarea class="form-control" id="comentarios" rows="3" placeholder="Insira observações sobre o desempenho do aluno" required></textarea>
+                            <label for="acesso_educacao">Acesso à Educação</label>
+                            <input type="text" class="form-control" id="acesso_educacao" placeholder="Descreva o acesso à educação" required>
                         </div>
-                        <button type="submit" class="btn btn-salvar-relatorio btn-block">Salvar Relatório</button>
+                        <div class="form-group">
+                            <label for="acesso_saude">Acesso à Saúde</label>
+                            <input type="text" class="form-control" id="acesso_saude" placeholder="Descreva o acesso à saúde" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="condicoes_vida">Condições de Vida</label>
+                            <input type="text" class="form-control" id="condicoes_vida" placeholder="Descreva as condições de vida" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Salvar Relatório</button>
                     </form>
                 </div>
                 <div class="card-footer text-center">
@@ -111,4 +148,3 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-

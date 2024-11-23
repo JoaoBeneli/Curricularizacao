@@ -93,9 +93,9 @@
                     <h4>Lista de Presença - Sistema de Faltas</h4>
                 </div>
                 <div class="card-body">
-                    <!-- Formulário de Presença -->
+                    
                     <form id="presencaForm">
-                        <!-- Nome do Aluno -->
+                       
                         <div class="form-group">
                             <label for="aluno">Nome do Aluno</label>
                             <input type="text" class="form-control" id="aluno" placeholder="Digite o nome do aluno" required>
@@ -115,7 +115,7 @@
                                 </tr>
                             </thead>
                             <tbody id="calendarTableBody">
-                                <!-- Dias do mês serão gerados dinamicamente -->
+                              
                             </tbody>
                         </table>
 
@@ -156,7 +156,7 @@
                         </td>
                     `;
                 } else {
-                    row.innerHTML += `<td></td>`; // Células vazias para completar a semana
+                    row.innerHTML += `<td></td>`; 
                 }
             }
             tabela.appendChild(row);
@@ -180,11 +180,11 @@
                     break;
                 }
             } else {
-                contadorFaltasConsecutivas = 0; // Reiniciar o contador se não for falta
+                contadorFaltasConsecutivas = 0; 
             }
         }
 
-        // Mostrar ou ocultar alerta
+
         const alerta = document.getElementById('alertaFaltas');
         if (alertaAtivado) {
             alerta.style.display = 'block';
@@ -193,10 +193,9 @@
         }
     }
 
-    // Gera o calendário ao carregar a página
     gerarCalendario();
 
-    // Salvar a presença
+
     document.getElementById('presencaForm').addEventListener('submit', function(event) {
         event.preventDefault();
         alert('Presença salva com sucesso!');

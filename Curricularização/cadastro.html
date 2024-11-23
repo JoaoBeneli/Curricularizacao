@@ -12,11 +12,11 @@
         .cadastro-container {
             margin-top: 50px;
         }
-        /* Estilo do botão de cadastro */
+
         .btn-cadastrar {
-            background-color: #342484; /* Cor personalizada */
-            color: white; /* Cor do texto */
-            border: none; /* Remove bordas padrão */
+            background-color: #342484; 
+            color: white; 
+            border: none; 
         }
     </style>
 </head>
@@ -32,6 +32,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+
             <!-- Menu suspenso para Cadastro de Alunos -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="cadastroDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -43,6 +44,7 @@
                     <a class="dropdown-item" href="cadastro_atividade.html">Cadastro de Atividade</a>
                 </div>
             </li>
+
             <!-- Menu suspenso para Relatórios -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="relatoriosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -110,40 +112,41 @@
 
 
 <script>
+    
     // Função para validar o formulário e cadastrar o aluno
     document.querySelector('form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Impede o envio do formulário
+        event.preventDefault(); 
 
-        // Obtendo os valores dos campos
+
         const nome = document.getElementById('nome').value.trim();
         const email = document.getElementById('email').value.trim();
         const senha = document.getElementById('senha').value.trim();
         const dataNascimento = document.getElementById('dataNascimento').value.trim();
         const telefone = document.getElementById('telefone').value.trim();
 
-        // Verifica se todos os campos foram preenchidos
+
         if (!nome || !email || !senha || !dataNascimento || !telefone) {
             alert('Por favor, preencha todos os campos obrigatórios.');
             return;
         }
 
-        // Validação simples para e-mail
+
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             alert('Por favor, insira um e-mail válido.');
             return;
         }
 
-        // Validação para senha (mínimo de 6 caracteres)
+
         if (senha.length < 6) {
             alert('A senha deve ter pelo menos 6 caracteres.');
             return;
         }
 
-        // Exibe mensagem de sucesso
+
         alert(`Aluno ${nome} cadastrado com sucesso!`);
         
-        // Resetar o formulário após o cadastro
+ 
         document.querySelector('form').reset();
     });
 </script>

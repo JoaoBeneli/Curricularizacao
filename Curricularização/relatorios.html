@@ -116,7 +116,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-    // Dados dos relatórios
+
     const relatorios = [
         { nome: "Relatório de Desempenho 2024", data: "18/10/2024", caminho: "desempenho_2024.pdf" },
         { nome: "Relatório de Frequência - 2024", data: "15/10/2024", caminho: "frequencia_2024.pdf" },
@@ -125,7 +125,7 @@
 
     const tabelaBody = document.querySelector("tbody");
 
-    // Preenchendo a tabela
+
     relatorios.forEach(relatorio => {
         const linha = document.createElement("tr");
         linha.innerHTML = `
@@ -143,7 +143,7 @@
         tabelaBody.appendChild(linha);
     });
 
-    // Mensagem de feedback
+
     document.querySelectorAll(".btn-success").forEach(btn => {
         btn.addEventListener("click", () => alert("Download iniciado."));
     });

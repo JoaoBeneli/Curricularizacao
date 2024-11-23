@@ -6,39 +6,39 @@
     <title>Cadastro de Conta</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Estilos para a imagem de fundo */
+        
         body {
-            background-image: url('./Imagem/Imagem1-1.jpg'); /* Substitua pelo caminho da sua imagem */
+            background-image: url('./Imagem/Imagem1-1.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             height: 100vh;
         }
 
-        /* Cabeçalho transparente */
+        
         .navbar {
-            background-color: transparent !important; /* Torna o cabeçalho transparente */
+            background-color: transparent !important; 
         }
 
-        /* Centralizar o formulário de cadastro */
+        
         .login-container {
             margin-top: 100px;
-            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com transparência */
+            background-color: rgba(255, 255, 255, 0.8); 
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Estilo do botão de cadastrar */
+
         .btn-cadastrar {
-            background-color: #342484; /* Cor personalizada */
-            color: white; /* Cor do texto */
-            border: none; /* Remove bordas padrão */
+            background-color: #342484;
+            color: white; 
+            border: none;
         }
 
-        /* Efeito ao passar o mouse sobre o botão */
+
         .btn-cadastrar:hover {
-            background-color: #2c1f6f; /* Cor mais escura ao passar o mouse */
+            background-color: #2c1f6f; 
         }
     </style>
 </head>
@@ -97,9 +97,9 @@
 
 <script>
     document.getElementById("cadastroForm").addEventListener("submit", function(event) {
-        event.preventDefault();  // Impede o envio padrão do formulário
+        event.preventDefault();  
 
-        // Obtendo os valores dos campos
+
         const nome = document.getElementById("nome").value;
         const email = document.getElementById("email").value;
         const senha = document.getElementById("senha").value;
@@ -111,10 +111,10 @@
             return;
         }
 
-        // Lógica de cadastro (em um sistema real, você enviaria para um servidor)
+
         alert("Cadastro realizado com sucesso! Redirecionando para a página de login.");
         
-        // Redirecionamento para a página de login após cadastro bem-sucedido
+
         window.location.href = "login.html";
     });
 </script>

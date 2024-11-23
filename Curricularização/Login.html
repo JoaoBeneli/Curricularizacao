@@ -6,39 +6,39 @@
     <title>Casa da Criança</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Estilos para a imagem de fundo */
+ 
         body {
-            background-image: url('./Imagem/Imagem1-1.jpg');
+            background-image: url('./Imagem/Imagem1-1.jpg'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             height: 100vh;
         }
 
-        /* Cabeçalho transparente */
+
         .navbar {
-            background-color: transparent !important; /* Torna o cabeçalho transparente */
+            background-color: transparent !important; 
         }
 
-        /* Centralizar o formulário de login */
+     
         .login-container {
             margin-top: 100px;
-            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com transparência */
+            background-color: rgba(255, 255, 255, 0.8); 
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Estilo do botão de entrar */
+        
         .btn-entrar {
-            background-color: #342484; /* Cor personalizada */
-            color: white; /* Cor do texto */
-            border: none; /* Remove bordas padrão */
+            background-color: #342484; 
+            color: white;
+            border: none; 
         }
 
-        /* Efeito ao passar o mouse sobre o botão */
+      
         .btn-entrar:hover {
-            background-color: #2c1f6f; /* Cor mais escura ao passar o mouse */
+            background-color: #2c1f6f;
         }
     </style>
 </head>
@@ -88,23 +88,23 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-    // Função de login
+  
     document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault();  // Impede o envio padrão do formulário
+        event.preventDefault();  
 
-        // Dados do formulário
+       
         const email = document.getElementById("email").value;
         const senha = document.getElementById("senha").value;
 
-        // Lógica de validação (para fins de exemplo, vou usar dados fixos)
-        const usuarioValido = email === "usuario@dominio.com" && senha === "senha123";
+        
+        const usuarioValido = email === "joao@hotmail.com" && senha === "senha123";
 
 
         if (usuarioValido) {
-            // Redireciona para cadastro.html se login for bem-sucedido
+            
             window.location.href = "cadastro.html";
         } else {
-            // Exibe um alerta se as credenciais forem inválidas
+           
             alert("E-mail ou senha inválidos.");
         }
     });

@@ -6,15 +6,15 @@
     <title>Relatório de Alunos</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Espaçamento para o conteúdo */
+  
         .container {
             margin-top: 50px;
         }
-        /* Estilo do botão de salvar relatório */
+   
         .btn-salvar-relatorio {
-            background-color: #342484; /* Cor personalizada */
-            color: white; /* Cor do texto */
-            border: none; /* Remove bordas padrão */
+            background-color: #342484;
+            color: white; 
+            border: none; 
         }
     </style>
 </head>
@@ -118,9 +118,9 @@
 
 <script>
     document.querySelector('form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Impede o envio padrão do formulário
+        event.preventDefault(); 
 
-        // Obtém os valores dos campos do formulário
+
         const nomeAluno = document.getElementById('nome_aluno').value.trim();
         const serieAno = document.getElementById('serie_ano').value.trim();
         const dataRelatorio = document.getElementById('data_relatorio').value.trim();
@@ -128,26 +128,15 @@
         const observacoes = document.getElementById('observacoes').value.trim();
         const relatorioCompleto = document.getElementById('relatorio_completo').value.trim();
 
-        // Validação para garantir que todos os campos foram preenchidos
+
         if (!nomeAluno || !serieAno || !dataRelatorio || !statusAcademico || !observacoes || !relatorioCompleto) {
             alert('Por favor, preencha todos os campos antes de salvar o relatório.');
             return;
         }
 
-        // Exibe uma mensagem de sucesso
+
         alert(`Relatório do aluno ${nomeAluno} salvo com sucesso!`);
 
-        // Opcional: Salvar dados no localStorage ou enviar para um servidor via AJAX/Fetch
-        // localStorage.setItem('relatorioAluno', JSON.stringify({ 
-        //     nomeAluno, 
-        //     serieAno, 
-        //     dataRelatorio, 
-        //     statusAcademico, 
-        //     observacoes, 
-        //     relatorioCompleto 
-        // }));
-
-        // Limpa o formulário
         document.querySelector('form').reset();
     });
 </script>

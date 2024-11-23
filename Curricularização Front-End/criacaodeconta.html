@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Conta</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        
+        body {
+            background-image: url('./Imagem/Imagem1-1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        
+        .navbar {
+            background-color: transparent !important; 
+        }
+
+        
+        .login-container {
+            margin-top: 100px;
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .btn-cadastrar {
+            background-color: #342484;
+            color: white; 
+            border: none;
+        }
+
+
+        .btn-cadastrar:hover {
+            background-color: #2c1f6f; 
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cabeçalho com Logo e fundo transparente -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
+        <img src="./Imagem/marca_casa_crianca_dom_antonio_horizontal.png" alt="Logo do Portal Educacional" width="200" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+
+<!-- Formulário de Cadastro -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="login-container">
+                <div class="card-header text-center">
+                    <h4>Crie sua conta</h4>
+                </div>
+                <div class="card-body">
+                    <form id="cadastroForm">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmar_senha">Confirmar Senha</label>
+                            <input type="password" class="form-control" id="confirmar_senha" placeholder="Confirme sua senha" required>
+                        </div>
+                        <button type="submit" class="btn btn-cadastrar btn-block">Cadastrar</button>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <small>Já tem uma conta? <a href="login.html">Faça login</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    document.getElementById("cadastroForm").addEventListener("submit", function(event) {
+        event.preventDefault();  
+
+
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const senha = document.getElementById("senha").value;
+        const confirmarSenha = document.getElementById("confirmar_senha").value;
+
+        // Verificando se as senhas são iguais
+        if (senha !== confirmarSenha) {
+            alert("As senhas não coincidem. Tente novamente.");
+            return;
+        }
+
+
+        alert("Cadastro realizado com sucesso! Redirecionando para a página de login.");
+        
+
+        window.location.href = "login.html";
+    });
+</script>
+
+</body>
+</html>

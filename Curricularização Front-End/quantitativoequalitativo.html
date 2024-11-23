@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Relatório Socioeconômico</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        .container {
+            margin-top: 50px;
+        }
+
+
+        .card-header {
+            background-color: #342484;
+            color: white;
+        }
+
+
+        .btn-primary {
+            background-color: #342484;
+            border-color: #342484;
+        }
+
+        .btn-primary:hover {
+            background-color: #2a1b6e;
+            border-color: #2a1b6e;
+        }
+
+
+        .titulo-centralizado {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="./Imagem/marca_casa_crianca_dom_antonio_horizontal.png" alt="Logo da Escola" style="height: 40px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <!-- Menu suspenso para Cadastro de Alunos -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="cadastroDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Cadastro
+                </a>
+                <div class="dropdown-menu" aria-labelledby="cadastroDropdown">
+                    <a class="dropdown-item" href="cadastro.html">Cadastro de Aluno</a>
+                    <a class="dropdown-item" href="cadastro_professores.html">Cadastro de Professor</a>
+                    <a class="dropdown-item" href="cadastro_atividade.html">Cadastro de Atividade</a>
+                </div>
+            </li>
+            <!-- Menu suspenso para Relatórios -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="relatoriosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Relatórios
+                </a>
+                <div class="dropdown-menu" aria-labelledby="relatoriosDropdown">
+                    <a class="dropdown-item" href="relatorio_aluno.html">Relatório de Alunos</a>
+                    <a class="dropdown-item" href="relatorios_assistente_social.html">Relatório de Desempenho</a>
+                    <a class="dropdown-item" href="socioeconomico.html">Relatório Socioeconômico</a>
+                    <a class="dropdown-item" href="quantitativoequalitativo.html">Relatório Quantitativos e Qualitativo</a>
+                    <a class="dropdown-item" href="relatorios.html">Retirada de Relatórios</a>
+                    <a class="dropdown-item" href="chamada.html">Retirada de Falta</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Formulário de Cadastro de Relatório Socioeconômico -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Cadastrar Relatório Socioeconômico</h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nome_responsavel">Nome do Responsável</label>
+                            <input type="text" class="form-control" id="nome_responsavel" placeholder="Digite o nome do responsável" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="renda_familiar">Renda Familiar</label>
+                            <input type="text" class="form-control" id="renda_familiar" placeholder="Digite a renda familiar" required>
+                        </div>
+
+                        <!-- Dados Quantitativos -->
+                        <div class="titulo-centralizado">
+                            <h5>Dados Quantitativos</h5>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantidade_familia">Número de Membros na Família</label>
+                            <input type="number" class="form-control" id="quantidade_familia" placeholder="Número de membros" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="n_filhoss">Número de Filhos em Idade Escolar</label>
+                            <input type="number" class="form-control" id="n_filhoss" placeholder="Número de filhos em idade escolar" required>
+                        </div>
+
+                        <!-- Dados Qualitativos -->
+                        <div class="titulo-centralizado">
+                            <h5>Dados Qualitativos</h5>
+                        </div>
+                        <div class="form-group">
+                            <label for="moradia">Tipo de Moradia</label>
+                            <input type="text" class="form-control" id="moradia" placeholder="Descreva o tipo de moradia" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="acesso_educacao">Acesso à Educação</label>
+                            <input type="text" class="form-control" id="acesso_educacao" placeholder="Descreva o acesso à educação" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="acesso_saude">Acesso à Saúde</label>
+                            <input type="text" class="form-control" id="acesso_saude" placeholder="Descreva o acesso à saúde" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="condicoes_vida">Condições de Vida</label>
+                            <input type="text" class="form-control" id="condicoes_vida" placeholder="Descreva as condições de vida" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Salvar Relatório</button>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <small><a href="relatorios.html">Ver todos os relatórios</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+
+        const nomeResponsavel = document.getElementById('nome_responsavel').value.trim();
+        const rendaFamiliar = document.getElementById('renda_familiar').value.trim();
+        const quantidadeFamilia = document.getElementById('quantidade_familia').value.trim();
+        const nFilhos = document.getElementById('n_filhoss').value.trim();
+        const moradia = document.getElementById('moradia').value.trim();
+        const acessoEducacao = document.getElementById('acesso_educacao').value.trim();
+        const acessoSaude = document.getElementById('acesso_saude').value.trim();
+        const condicoesVida = document.getElementById('condicoes_vida').value.trim();
+
+
+        if (
+            !nomeResponsavel || 
+            !rendaFamiliar || 
+            !quantidadeFamilia || 
+            !nFilhos || 
+            !moradia || 
+            !acessoEducacao || 
+            !acessoSaude || 
+            !condicoesVida
+        ) {
+            alert('Por favor, preencha todos os campos antes de salvar o relatório.');
+            return;
+        }
+
+
+        alert(`Relatório socioeconômico de ${nomeResponsavel} salvo com sucesso!`);
+
+
+        document.querySelector('form').reset();
+    });
+</script>
+
+
+</body>
+</html>
